@@ -1,0 +1,11 @@
+BEGIN TRANSACTION;
+INSERT INTO "ads" VALUES(1,'Typewriter','Old manual typewriter. Many years useful service. Works best with a bottle next to it.',71.95,54,'dhammett@email.com','http://homepage.mac.com/david_griffiths/typewriter.png','','');
+INSERT INTO "ads" VALUES(2,'Football','Some strings frayed.',74.02,45,'marty@googlemail.com','http://www.freefever.com/freeclipart/clipart/football2.gif','','');
+INSERT INTO "ads" VALUES(3,'Moosehead','Slightly moth-eaten. One of the antlers is broken and there''s a strange buzzing sound behind the eyes...',2978.25,56,'kathy@hotmail.com','http://saloon.javaranch.com/ubb/moosefly.gif','','');
+INSERT INTO "ads" VALUES(4,'Desk','Milk desk - go...',4800,123,'andy@allmail....','http://picasaweb.goog...','','');
+INSERT INTO "ads" VALUES(5,'Door curtain','Beaded door cu...',11,773,'dawn@hotmail....','http://www.freewebsit...','','');
+INSERT INTO "ads" VALUES(6,'Apple Newton','Still works! M...',25,2,'ahertz@differ...','http://www.differnet....','','');
+INSERT INTO "ads" VALUES(7,'Sinclair C5','Battery flat t...',372.06,346,'clive@sinclai...','http://www.ebay.com/w...','','');
+INSERT INTO "ads" VALUES(8,'Edsel','Never used aut...',355,755,'bing@badabing...','http://pages.google.c...','','');
+INSERT INTO "ads" VALUES(37,'Diamond','203.4 carats, grade D pear cut diamond. Low price for quick sale. Owner leaving the country.',1000000,5234,'pink@panther.com','http://','','');
+COMMIT;
