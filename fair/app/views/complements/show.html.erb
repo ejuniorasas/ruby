@@ -1,0 +1,29 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Nome:</strong>
+  <%= @complement.nome %>
+</p>
+
+<p>
+  <strong>Tipo:</strong>
+  <%= @complement.tipo %>
+</p>
+
+<p>
+  <strong>Grouping:</strong>
+  <%= @complement.grouping %>
+</p>
+
+<p>
+  <strong>Inf:</strong>
+  <%= @complement.inf %>
+</p>
+
+<p>
+  <strong>Coments:</strong>
+  <%= @complement.coments %>
+</p>
+
+<%= link_to 'Edit', edit_complement_path(@complement) %> |
+<%= link_to 'Back', complements_path %>

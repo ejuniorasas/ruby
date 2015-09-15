@@ -1,0 +1,19 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  data_venda: 2015-09-15
+  data_pag: 
+  status: MyString
+  valor_venda: 1.5
+  valor_pago: 1.5
+  product: MyString
+  quantity: 1.5
+
+two:
+  data_venda: 2015-09-15
+  data_pag: 
+  status: MyString
+  valor_venda: 1.5
+  valor_pago: 1.5
+  product: MyString
+  quantity: 1.5

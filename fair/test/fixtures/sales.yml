@@ -1,0 +1,17 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  data_ini: 2015-09-14
+  data_fim: 2015-09-14
+  status: MyString
+  fair_inventory_from: 
+  date_closed: 2015-09-14
+  coments: MyText
+
+two:
+  data_ini: 2015-09-14
+  data_fim: 2015-09-14
+  status: MyString
+  fair_inventory_from: 
+  date_closed: 2015-09-14
+  coments: MyText
