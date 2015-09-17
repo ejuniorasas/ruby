@@ -1,4 +1,6 @@
 Rails.application.routes.draw do
+  resources :sales
+  resources :sales
   root 'sales#index'
   get 'sales/index'
 

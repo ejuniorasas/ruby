@@ -1,29 +1,35 @@
 <p id="notice"><%= notice %></p>
 
-<p>
-  <strong>Nome:</strong>
-  <%= @complement.nome %>
-</p>
 
-<p>
-  <strong>Tipo:</strong>
-  <%= @complement.tipo %>
-</p>
+<div class="panel panel-primary">
+      <div class="panel-heading"> Dados do Complemento</div>
+      <div class="panel-body center">
+      <p>
+        <strong>Nome:</strong>
+        <%= @complement.nome %>
+     
+        <strong>Tipo:</strong>
+        <%= @complement.tipo %>
+   
+        <strong>Grouping:</strong>
+        <%= @complement.grouping %>
+      </p>
+    </div>
+</div>
+<div class="panel panel-info">
+  <div class="panel-heading"> Observaçōes</div>
+  <div class="panel-body center">
+    <p>
+      <strong>Inf:</strong>
+      <%= @complement.inf %>
 
-<p>
-  <strong>Grouping:</strong>
-  <%= @complement.grouping %>
 </p>
-
 <p>
-  <strong>Inf:</strong>
-  <%= @complement.inf %>
-</p>
-
-<p>
-  <strong>Coments:</strong>
-  <%= @complement.coments %>
-</p>
+      <strong>Coments:</strong>
+      <%= @complement.coments %>
+    </p>
+  </div>
+</div>
 
 <%= link_to 'Edit', edit_complement_path(@complement) %> |
 <%= link_to 'Back', complements_path %>

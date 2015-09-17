@@ -5,10 +5,10 @@
   <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
 
   		<!-- Bootstrap Core CSS file -->
-		<link rel="stylesheet" href="assets/css/bootstrap.min.css">
+  		<%=stylesheet_link_tag "/asset/css/bootstrap.min.css", media: 'all'%>
+  		<%=stylesheet_link_tag "/asset/css/styles", media: 'all'%>
 
 		<!-- Override CSS file - add your own CSS rules -->
-		<link rel="stylesheet" href="assets/css/styles.css">
 
 		<!-- Conditional comment containing JS files for IE6 - 8 -->
 		<!--[if lt IE 9]>
@@ -52,9 +52,9 @@
 <%= yield %>
 </div>
 <!-- JQuery scripts -->
-	    <script src="assets/js/jquery-1.11.2.min.js"></script>
+	    <%=javascript_include_tag "/asset/js/jquery-1.11.2.min.js"%>
 
 		<!-- Bootstrap Core scripts -->
-		<script src="assets/js/bootstrap.min.js"></script>
+		<%=javascript_include_tag "/asset/js/bootstrap.min.js"%>
 </body>
 </html>

@@ -1,37 +1,42 @@
-<%= form_for(@complement) do |f| %>
-  <% if @complement.errors.any? %>
-    <div id="error_explanation">
-      <h2><%= pluralize(@complement.errors.count, "error") %> prohibited this complement from being saved:</h2>
 
-      <ul>
-      <% @complement.errors.full_messages.each do |message| %>
-        <li><%= message %></li>
+<div class="row">
+   <div class="col-sm-6">
+      <%= form_for(@complement, html: {class:"form-horizontal"}) do |f| %>
+        <% if @complement.errors.any? %>
+          <div id="error_explanation">
+            <h2><%= pluralize(@complement.errors.count, "error") %> prohibited this complement from being saved:</h2>
+
+            <ul>
+            <% @complement.errors.full_messages.each do |message| %>
+              <li><%= message %></li>
+            <% end %>
+            </ul>
+          </div>
+        <% end %>
+
+        <div class="field form-group col-sm-6">
+          <%= f.label :nome, html: {class:'col-sm-2 control-label'}%><br>
+          <%= f.text_field :nome %>
+        </div>
+        <div class="field form-group col-sm-6">
+          <%= f.label :tipo %><br>
+          <%= f.text_field :tipo %>
+        </div>
+        <div class="field form-group col-sm-6">
+          <%= f.label :grouping %><br>
+          <%= f.text_field :grouping %>
+        </div>
+        <div class="field form-group col-sm-6">
+          <%= f.label :inf %><br>
+          <%= f.text_field :inf %>
+        </div>
+        <div class="field form-group col-sm-12">
+          <%= f.label :coments %><br>
+          <%= f.text_area :coments, html:{ class:'form-control span12'} %>
+        </div>
+        <div class="actions">
+          <%= f.submit %>
+        </div>
       <% end %>
-      </ul>
-    </div>
-  <% end %>
-
-  <div class="field">
-    <%= f.label :nome %><br>
-    <%= f.text_field :nome %>
   </div>
-  <div class="field">
-    <%= f.label :tipo %><br>
-    <%= f.text_field :tipo %>
-  </div>
-  <div class="field">
-    <%= f.label :grouping %><br>
-    <%= f.text_field :grouping %>
-  </div>
-  <div class="field">
-    <%= f.label :inf %><br>
-    <%= f.text_field :inf %>
-  </div>
-  <div class="field">
-    <%= f.label :coments %><br>
-    <%= f.text_area :coments %>
-  </div>
-  <div class="actions">
-    <%= f.submit %>
-  </div>
-<% end %>
+</div>
