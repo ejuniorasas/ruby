@@ -17,8 +17,26 @@ class SalesController < ApplicationController
     @sale = Sale.new
   end
 
+  def new_item
+    @item_sale = ItemSale.new
+  end
+
   # GET /sales/1/edit
   def edit
+    show
+  end
+
+  def edit_item
+    show
+  end
+  def edit_env
+    show
+  end
+  def delete_item
+    show
+  end
+  def delete_env
+    show
   end
 
   # POST /sales
@@ -67,8 +85,18 @@ class SalesController < ApplicationController
       @sale = Sale.find(params[:id])
     end
 
+    def set_collections
+      @produtos = Complement.where(tipo: 'Produto').order(:nome)
+      @clientes = Complement.where(tipo: 'Cliente')
+      @clientes.push(Complement.where(tipo: 'Cliente/Fornec.'))
+      @fornecedores = Complement.where(tipo: 'Fornecedor')
+      @fornecedores.push(Complement.where(tipo: 'Cliente/Fornec.'))
+      
+    end
+
+
     # Never trust parameters from the scary internet, only allow the white list through.
     def sale_params
-      params[:sale]
+      params.require(:sale).permit(:data_ini, :data_fim, :status, :fair_inventory_from,:date_closed, :coments)
     end
 end

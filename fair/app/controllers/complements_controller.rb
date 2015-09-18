@@ -5,7 +5,7 @@ class ComplementsController < ApplicationController
   # GET /complements.json
   def index
     if params[:tipo]
-      @complements = Complement.where(tipo: 'Tipo')
+      @complements = Complement.where(tipo: params[:tipo])
     else
       @complements = Complement.all
     end

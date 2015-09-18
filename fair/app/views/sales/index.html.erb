@@ -9,6 +9,7 @@
       <th>Data Início</th>
       <th>Data Encer.</th>
       <th>Status</th>
+      <th>Coments</th>
       <th colspan="3"></th>
     </tr>
   </thead>
@@ -19,6 +20,7 @@
         <td><%= sale.data_ini %></td>
         <td><%= sale.data_fim %></td>
         <td><%= sale.status %></td>
+        <td><%= sale.coments %></td>
 
         <td><%= link_to 'Show', sale %></td>
         <td><%= link_to 'Edit', edit_sale_path(sale) %></td>
@@ -29,37 +31,5 @@
 </table>
 
 <br>
-
-
-
-<dif class="table-responsive">
-<table class="table table-striped table-hover table-responsive">
-  <thead>
-    <tr>
-      <th>Nome</th>
-      <th>Tipo</th>
-      <th>Grouping</th>
-      <th>Inf</th>
-      <th>Coments</th>
-      <th colspan="3"></th>
-    </tr>
-  </thead>
-
-  <tbody>
-    <% @complements.each do |complement| %>
-      <tr>
-        <td><%= complement.nome %></td>
-        <td><%= complement.tipo %></td>
-        <td><%= complement.grouping %></td>
-        <td><%= complement.inf %></td>
-        <td><%= complement.coments %></td>
-        <td><%= link_to 'Show', complement %></td>
-        <td><%= link_to 'Edit', edit_complement_path(complement) %></td>
-        <td><%= link_to 'Destroy', complement, method: :delete, data: { confirm: 'Are you sure?' } %></td>
-      </tr>
-    <% end %>
-  </tbody>
-</table>
-</dif>
 
 <%= link_to 'New Fair', new_sale_path %>

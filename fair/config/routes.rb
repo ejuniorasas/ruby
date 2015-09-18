@@ -1,8 +1,11 @@
 Rails.application.routes.draw do
-  resources :sales
-  resources :sales
   root 'sales#index'
-  get 'sales/index'
+  resources :sales
+  get '/sales/:id/edit_env', :controller => 'sales', :action => 'edit_env'
+  get '/sales/:id/delete_env', :controller => 'sales', :action => 'delete_env'
+  get '/sales/:id/edit_item', :controller => 'sales', :action => 'edit_item'
+  get '/sales/:id/delete_item', :controller => 'sales', :action => 'delete_item'
+
 
   resources :complements
 

@@ -6,7 +6,7 @@ class Inventory
   field :price_sale, type: Float
   field :price_buy, type: Float
   field :quantity, type: Float
-  field :unit_metter, type String
+  field :unit_metter, type: String
 
   embedded_in :sale
 end

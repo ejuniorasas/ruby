@@ -4,7 +4,7 @@ class Sale
   field :data_ini, type: Date
   field :data_fim, type: Date
   field :status, type: String
-  field :fair_inventory_from, type: Objectid
+  field :fair_inventory_from, type: String
   field :date_closed, type: Date
   field :coments, type: String
 
