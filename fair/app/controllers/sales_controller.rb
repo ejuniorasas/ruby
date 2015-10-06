@@ -4,7 +4,7 @@ class SalesController < ApplicationController
   # GET /sales
   # GET /sales.json
   def index
-    @sales = Sale.all
+    @sales = Sale.all.sort({data_fim: -1})
   end
 
   # GET /sales/1
@@ -17,25 +17,8 @@ class SalesController < ApplicationController
     @sale = Sale.new
   end
 
-  def new_item
-    @item_sale = ItemSale.new
-  end
-
   # GET /sales/1/edit
   def edit
-    show
-  end
-
-  def edit_item
-    show
-  end
-  def edit_env
-    show
-  end
-  def delete_item
-    show
-  end
-  def delete_env
     show
   end
 
@@ -83,15 +66,6 @@ class SalesController < ApplicationController
     # Use callbacks to share common setup or constraints between actions.
     def set_sale
       @sale = Sale.find(params[:id])
-    end
-
-    def set_collections
-      @produtos = Complement.where(tipo: 'Produto').order(:nome)
-      @clientes = Complement.where(tipo: 'Cliente')
-      @clientes.push(Complement.where(tipo: 'Cliente/Fornec.'))
-      @fornecedores = Complement.where(tipo: 'Fornecedor')
-      @fornecedores.push(Complement.where(tipo: 'Cliente/Fornec.'))
-      
     end
 
 

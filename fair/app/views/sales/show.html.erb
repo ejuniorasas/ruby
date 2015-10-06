@@ -1,0 +1,112 @@
+<p id="notice"><%= notice %></p>
+
+<div class="panel panel-primary">
+      <div class="panel-heading"> Dados da Feira</div>
+      <div class="panel-body center">
+			<p>
+			  <strong>Data Inicio: </strong>
+			  <%= @sale.data_ini %>
+			  </p>
+			  <p>
+			  <strong>Data Prevista para encerramento: </strong>
+			  <%= @sale.data_fim %>
+			  </p>
+			  <p>
+			  <strong>Status da Feira: </strong>
+			  <%= @sale.status%>
+			</p>
+			<p>
+			<strong>Comentarios: </strong>
+			  <%= @sale.coments %>
+			</p>
+		</div>
+</div>
+
+<div class="panel panel-primary">
+  <div class="panel-heading"> Movimentações </div>
+  <div class="panel-body center">
+	<div class="panel panel-info col-sm-6">
+	  <div class="panel-heading"> Estoque</div>
+	  <div class="panel-body center">
+
+		<dif class="table-responsive">
+		<table class="table table-striped table-hover table-responsive">
+		  <thead>
+		    <tr>
+		      <th>Produto</th>
+		      <th>Fornecedor</th>
+		      <th>Preço Custo</th>
+		      <th>Preço Venda</th>
+		      <th>Quantidade</th>
+		      <th>Medida</th>
+		      <th colspan="3"></th>
+		    </tr>
+		  </thead>
+
+		  <tbody>
+		    <% @sale.inventories.each do |i| %>
+		      <tr>
+		        <td><%= i.product %></td>
+		        <td><%= i.fornecedor %></td>
+		        <td><%= i.price_buy %></td>
+		        <td><%= i.price_sale %></td>
+		        <td><%= i.quantity %></td>
+		        <td><%= i.unit_metter %></td>
+
+		        <td><%= link_to 'Edit', controller: 'sales', action: 'edit_inv', id: i %></td>
+		        <td><%= link_to 'Destroy', controller:'sales', action:'delete_inv', id: i, data: { confirm: 'Are you sure?' } %></td>
+		      </tr>
+		    <% end %>
+		  </tbody>
+		</table>
+		</dif>
+
+	  </div>
+	</div>
+
+	<div class="panel panel-success col-sm-6">
+	  <div class="panel-heading"> Vendas </div>
+	  <div class="panel-body center">
+
+		<dif class="table-responsive">
+		<table class="table table-striped table-hover table-responsive">
+		  <thead>
+		    <tr>
+		      <th>Data Venda</th>
+		      <th>Data Pgto</th>
+		      <th>Status</th>
+		      <th>Valor Venda</th>
+		      <th>Valor Pgto</th>
+		      <th>Produto</th>
+		      <th>Quantidade</th>
+		      <th colspan="3"></th>
+		    </tr>
+		  </thead>
+
+		  <tbody>
+		    <% @sale.item_sales.each do |i| %>
+		      <tr>
+		        <td><%= i.data_venda %></td>
+		        <td><%= i.data_pag %></td>
+		        <td><%= i.status %></td>
+		        <td><%= i.valor_venda %></td>
+		        <td><%= i.valor_pago %></td>
+		        <td><%= i.product %></td>
+		        <td><%= i.quantity %></td>
+
+		        <td><%= link_to 'Edit', controller: 'sales', action: 'edit_item', id: i %></td>
+		        <td><%= link_to 'Destroy', controller:'sales', action:'delete_item', id: i, data: { confirm: 'Are you sure?' } %></td>
+		      </tr>
+		    <% end %>
+		  </tbody>
+		</table>
+		</dif>
+
+	  </div>
+	</div>
+</div>
+</div>
+
+
+<%= link_to 'Edit', edit_sale_path(@sale) %> |
+<%= link_to 'Back', sales_path %>

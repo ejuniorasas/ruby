@@ -1,0 +1,63 @@
+
+<div class="row">
+   <div class="col-sm-6">
+    <%= form_for(@item_sale) do |f| %>
+      <% if @item_sale.errors.any? %>
+        <div id="error_explanation">
+          <h2><%= pluralize(@item_sale.errors.count, "error") %> prohibited this Item from being saved:</h2>
+
+          <ul>
+          <% @item_sale.errors.full_messages.each do |message| %>
+            <li><%= message %></li>
+          <% end %>
+          </ul>
+        </div>
+      <% end %>
+
+  field :product, type: String
+  field :fornecedor, type: String
+  field :price_sale, type: Float
+  field :price_buy, type: Float
+  field :quantity, type: Float
+  field :unit_metter, type: String
+
+
+      <div class="field form-group col-sm-12">
+        <%= f.label :product, html: {class:'col-sm-2 control-label'} %><br>
+        <%= f.text_field :product %>
+      </div>
+
+      <div class="field form-group col-sm-12">
+        <%= f.label :fornecedor, html: {class:'col-sm-2 control-label'} %><br>
+        <%= f.select :product %>
+      </div>
+
+       <div class="field form-group col-sm-6">
+        <%= f.label :data_venda, html: {class:'col-sm-2 control-label'}%><br>
+        <%= f.date_field :data_venda, :required => true %>
+      </div>
+      <div class="field form-group col-sm-6">
+        <%= f.label :data_pag, html: {class:'col-sm-2 control-label'} %><br>
+        <%= f.date_field :data_pag %>
+      </div>
+      <div class="field form-group col-sm-6">
+        <%= f.label :status, html: {class:'col-sm-2 control-label'} %><br>
+        <%= f.select :status, ['','Planejada', 'Aberta', 'Aguard. Pagamento', 'Aguard. Pg. Forn.', 'Encerrada'] %>
+      </div>
+
+      <div class="field form-group col-sm-12">
+        <%= f.label :valor_venda, html: {class:'col-sm-2 control-label'} %><br>
+        <%= f.number_field :valor_venda %>
+      </div>
+
+      <div class="field form-group col-sm-12">
+        <%= f.label :quantity, html: {class:'col-sm-2 control-label'} %><br>
+        <%= f.number_field :quantity %>
+      </div>
+
+      <div class="actions form-group col-sm-12">
+        <%= f.submit %>
+      </div>
+    <% end %>
+  </div>
+</div>

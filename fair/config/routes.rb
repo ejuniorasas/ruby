@@ -6,6 +6,7 @@ Rails.application.routes.draw do
   get '/sales/:id/edit_item', :controller => 'sales', :action => 'edit_item'
   get '/sales/:id/delete_item', :controller => 'sales', :action => 'delete_item'
 
+  match ':controller(/:action(/:id))', :via => :get
 
   resources :complements
 
