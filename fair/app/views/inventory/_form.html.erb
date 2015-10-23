@@ -24,12 +24,12 @@
 
       <div class="field form-group col-sm-12">
         <%= f.label :product, html: {class:'col-sm-2 control-label'} %><br>
-        <%= f.text_field :product %>
+        <%= f.select :product, @product_list, %>
       </div>
 
       <div class="field form-group col-sm-12">
         <%= f.label :fornecedor, html: {class:'col-sm-2 control-label'} %><br>
-        <%= f.select :product %>
+        <%= f.select :product, %>
       </div>
 
        <div class="field form-group col-sm-6">

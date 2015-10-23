@@ -1,4 +1,8 @@
 Rails.application.routes.draw do
+  get 'inventory/new'
+
+  get 'inventory/show'
+
   root 'sales#index'
   resources :sales
   get '/sales/:id/edit_env', :controller => 'sales', :action => 'edit_env'

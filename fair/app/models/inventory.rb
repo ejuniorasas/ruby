@@ -1,6 +1,8 @@
 class Inventory
   include Mongoid::Document
   
+  extend ApplicationDao
+
   field :product, type: String
   field :fornecedor, type: String
   field :price_sale, type: Float

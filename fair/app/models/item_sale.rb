@@ -1,6 +1,8 @@
 class ItemSale
   include Mongoid::Document
   
+  extend ApplicationDao
+  
   field :data_venda, type: Date
   field :data_pag, type: Data
   field :status, type: String

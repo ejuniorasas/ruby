@@ -1,14 +1,15 @@
 require 'test_helper'
 
 class SalesControllerTest < ActionController::TestCase
-  setup do
-    @sale = sales(:one)
-  end
 
   test "should get index" do
     get :index
     assert_response :success
     assert_not_nil assigns(:sales)
+  end
+
+  setup do
+    @sale = sales(:one)
   end
 
   test "should get new" do

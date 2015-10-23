@@ -1,14 +1,15 @@
 require 'test_helper'
 
 class ComplementsControllerTest < ActionController::TestCase
-  setup do
-    @complement = complements(:one)
-  end
 
   test "should get index" do
     get :index
     assert_response :success
     assert_not_nil assigns(:complements)
+  end
+
+  setup do
+    @complement = complements(:one)
   end
 
   test "should get new" do
