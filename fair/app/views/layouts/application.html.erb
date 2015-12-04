@@ -31,16 +31,16 @@
 						<span class="icon-bar"></span>
 						<span class="icon-bar"></span>
 					</button>
-					<a class="navbar-brand" href="#">Vendas</a>
+					<%=link_to 'Feiras', sales_path, :class =>'navbar-brand' %>
 				</div>
 				<!-- /.navbar-header -->
 
 				<!-- Collect the nav links, forms, and other content for toggling -->
 				<div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
 					<ul class="nav navbar-nav">
-						<li><%= link_to 'Lista de Tipos', controller: 'complements', tipo: 'Tipo'  %></li>
-						<li><a href="#">Nav item 2</a></li>
-						<li><a href="#">Nav item 3</a></li>
+					    <% $lit_tipos.each do |item| %>
+						<li><%= link_to item, controller: 'complements', tipo: item  %></li>
+						<%end%>
 					</ul>
 				</div>
 				<!-- /.navbar-collapse -->

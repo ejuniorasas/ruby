@@ -1,13 +1,16 @@
 class ComplementsController < ApplicationController
   before_action :set_complement, only: [:show, :edit, :update, :destroy, :list]
+  before_action :set_list, only: [:new, :edit, :update]
 
   # GET /complements
   # GET /complements.json
   def index
     if params[:tipo]
       @complements = Complement.where(tipo: params[:tipo])
+      $tipo_selected = params[:tipo]
     else
       @complements = Complement.all
+      $tipo_selected = nil
     end
   end
 
@@ -69,6 +72,17 @@ class ComplementsController < ApplicationController
     # Use callbacks to share common setup or constraints between actions.
     def set_complement
       @complement = Complement.find(params[:id])
+    end
+
+    def set_list
+      unless $tipo_selected
+        
+        puts 'aqui............'
+      
+        @lit_tipos = Complement.where(tipo: 'Tipo').distinct(:nome)
+      end if $tipo_selected
+      puts 'aqui............'
+      puts $tipo_selected
     end
 
     # Never trust parameters from the scary internet, only allow the white list through.

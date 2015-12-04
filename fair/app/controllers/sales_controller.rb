@@ -5,6 +5,7 @@ class SalesController < ApplicationController
   # GET /sales.json
   def index
     @sales = Sale.all.sort({data_fim: -1})
+    $lit_tipos = Complement.where(tipo: 'Tipo').distinct(:nome).sort()
   end
 
   # GET /sales/1
@@ -26,6 +27,7 @@ class SalesController < ApplicationController
   # POST /sales.json
   def create
     @sale = Sale.new(sale_params)
+    @sale.inventories.push Inventory.new
 
     respond_to do |format|
       if @sale.save

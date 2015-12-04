@@ -1,4 +1,6 @@
 Rails.application.routes.draw do
+  resources :complements
+
   get 'inventory/new'
 
   get 'inventory/show'
@@ -10,10 +12,7 @@ Rails.application.routes.draw do
   get '/sales/:id/edit_item', :controller => 'sales', :action => 'edit_item'
   get '/sales/:id/delete_item', :controller => 'sales', :action => 'delete_item'
 
-  match ':controller(/:action(/:id))', :via => :get
-
-  resources :complements
-
+  
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 

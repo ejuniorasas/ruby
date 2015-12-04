@@ -1,2 +1,88 @@
+  <p id="notice"><%= notice %></p>
+
+  <div class="panel-body center">
+	<div class="panel panel-info col-sm-12">
+	  <div class="panel-heading"> Estoque</div>
+	  <div class="panel-body center">
+
+		<dif class="table-responsive">
+		<table id="idInventory" class="display" data-source="<%=sale.inventories(format: "json") %>">
+		  <thead>
+		    <tr>
+		      <th>Produto</th>
+		      <th>Fornecedor</th>
+		      <th>Preço<br>Custo</th>
+		      <th>Preço<br>Venda</th>
+		      <th>Quantidade</th>
+		      <th>Medida...</th>
+		      <th colspan="3"></th>
+		    </tr>
+		  </thead>
+
+		  <tbody>
+		  </tbody>
+		</table>
+		</dif>
+
+	  </div>
+	</div>
+
+	<div class="panel panel-success col-sm-6">
+	  <div class="panel-heading"> Vendas 
+	  	<div class="btn-group pull-right">
+        	<a href="#" class="btn-sm glyphicon-plus btn-success"></a>
+      	</div>
+
+	  </div>
+	  <div class="panel-body center">
+
+		<dif class="table-responsive">
+		<table id="idSales" class="table table-striped table-hover table-responsive">
+		  <thead>
+		    <tr>
+		      <th>Data<br>Venda</th>
+		      <th>Data<br>Pgto</th>
+		      <th>Status</th>
+		      <th>Valor<br>Venda</th>
+		      <th>Valor<br>Pgto</th>
+		      <th>Produto</th>
+		      <th>Quantidade</th>
+		      <th colspan="3"></th>
+		    </tr>
+		  </thead>
+
+		  <tbody>
+		    <% @sale.item_sales.each do |i| %>
+		      <tr>
+		        <td><%= i.data_venda %></td>
+		        <td><%= i.data_pag %></td>
+		        <td><%= i.status %></td>
+		        <td><%= i.valor_venda %></td>
+		        <td><%= i.valor_pago %></td>
+		        <td><%= i.product %></td>
+		        <td><%= i.quantity %></td>
+
+		        <td><%= link_to 'Edit', controller: 'sales', action: 'edit_item', id: i %></td>
+		        <td><%= link_to 'Destroy', controller:'sales', action:'delete_item', id: i, data: { confirm: 'Are you sure?' } %></td>
+		      </tr>
+		    <% end %>
+		  </tbody>
+		</table>
+		</dif>
+
+	  </div>
+	</div>
+</div>
+
+<script type="text/javascript">
+	jQuery -> $('#idInventory').dataTable()
+	sPaginationType: "full_numbers"
+          bJQueryUI: true;
+	jQuery -> $('#idSales').dataTable();
+</script>
+
+
+
+
 <h1>Inventory#show</h1>
 <p>Find me in app/views/inventory/show.html.erb</p>
